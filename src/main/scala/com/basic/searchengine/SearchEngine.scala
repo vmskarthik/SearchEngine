@@ -45,6 +45,8 @@ object FileIndexer {
   def index(dir: File): Index = {
 
     val files = dir.listFiles().toList
+ 
+    println(s"${files.size} files read in the directory ${dir.getAbsolutePath}")
 
     val wordCounters = files.flatMap { file =>
       val fileSource = Source.fromFile(file)
